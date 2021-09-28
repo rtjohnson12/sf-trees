@@ -1,9 +1,24 @@
 # -*- coding: utf-8 -*-
 import click
 import logging
+import requests
+import pandas as pd
+import json
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
 
+
+def import_parks():
+    data_id = "3nje-yn2u"
+    raw = requests.get(f"https://data.sfgov.org/resource/{data_id}.json")
+    raw.content
+    pass
+
+def import_contours():
+    pass
+
+def import_trees():
+    pass
 
 @click.command()
 @click.argument('input_filepath', type=click.Path(exists=True))
@@ -14,7 +29,6 @@ def main(input_filepath, output_filepath):
     """
     logger = logging.getLogger(__name__)
     logger.info('making final data set from raw data')
-
 
 if __name__ == '__main__':
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
