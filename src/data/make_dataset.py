@@ -7,19 +7,6 @@ import json
 from pathlib import Path
 from dotenv import find_dotenv, load_dotenv
 
-
-def import_parks():
-    data_id = "3nje-yn2u"
-    raw = requests.get(f"https://data.sfgov.org/resource/{data_id}.json")
-    raw.content
-    pass
-
-def import_contours():
-    pass
-
-def import_trees():
-    pass
-
 @click.command()
 @click.argument('input_filepath', type=click.Path(exists=True))
 @click.argument('output_filepath', type=click.Path())
